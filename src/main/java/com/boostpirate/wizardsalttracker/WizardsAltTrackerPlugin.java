@@ -53,7 +53,9 @@ public class WizardsAltTrackerPlugin extends Plugin
     @Inject
     private OkHttpClient httpClient;
 
-    private final Gson gson = new Gson();
+    // ✅ Use injected Gson instead of new Gson()
+    @Inject
+    private Gson gson;
 
     private long lastSentTotalCoins = -1;
     private long lastSentAtMillis = 0L;
